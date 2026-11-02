@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test geslaagd</title>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f172a;color:#e2e8f0;font-family:system-ui,sans-serif;text-align:center}
+  h1{font-size:2rem;margin:.2em 0}
+  #klok{font-size:3.5rem;font-variant-numeric:tabular-nums;color:#38bdf8}
+  button{margin-top:1.5rem;padding:.8rem 1.6rem;font-size:1.1rem;border:0;border-radius:12px;background:#38bdf8;color:#0f172a;cursor:pointer}
+  #teller{margin-top:.8rem;opacity:.8}
+</style>
+</head>
+<body>
+<main>
+  <div style="font-size:3rem">✅</div>
+  <h1>Hoi Sjoerd, test geslaagd</h1>
+  <div id="klok">--:--:--</div>
+  <button id="knop">Tik mij</button>
+  <div id="teller">0 keer getikt</div>
+</main>
+<script>
+  const klok=document.getElementById('klok');
+  setInterval(()=>klok.textContent=new Date().toLocaleTimeString('nl-NL'),1000);
+  klok.textContent=new Date().toLocaleTimeString('nl-NL');
+  let n=0;
+  document.getElementById('knop').onclick=()=>{n++;document.getElementById('teller').textContent=n+' keer getikt';};
+</script>
+</body>
+</html>
